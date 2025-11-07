@@ -1,16 +1,51 @@
-# rmproject
+# Rick & Morty (Flutter • MVVM)
 
-A new Flutter project.
+Aplicativo Flutter que consome a Rick and Morty API para listar personagens e exibir detalhes.
 
-## Getting Started
+## Funcionalidades
 
-This project is a starting point for a Flutter application.
+* Lista de personagens com **nome** e **imagem**
+* Tela de detalhes: **name**, **status**, **species**
+* **Busca** por nome e **filtro** por status (Alive / Dead / Unknown)
+* Paginação com botão **Carregar mais** + **Pull-to-refresh**
+* **Tema claro/escuro** (toggle)
+* **Splash screen** com fade e fundo preto
 
-A few resources to get you started if this is your first Flutter project:
+## Arquitetura (MVVM)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+lib/
+  features/characters/
+    data/
+      api.dart
+      repo.dart
+    model/
+      character.dart
+    vm/
+      view_model.dart
+    view/
+      page.dart
+      details_page.dart
+  splash/
+    splash_screen.dart
+  theme/
+    theme.dart
+    dark_theme.dart
+  main.dart
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Fluxo: **View ⇄ ViewModel ⇄ Repository ⇄ Api** (injeção via `provider`)
+
+## Tecnologias
+
+* Flutter (Material 3)
+* provider (estado/DI)
+* http (requisições)
+
+## Como rodar
+
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
