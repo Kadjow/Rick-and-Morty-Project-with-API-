@@ -15,6 +15,8 @@ Aplicativo Flutter que consome a Rick and Morty API para listar personagens e ex
 
 ```
 lib/
+  assets/
+    logoRM.jpg
   features/characters/
     data/
       api.dart
